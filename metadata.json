@@ -1,0 +1,8 @@
+{
+  "name": "Copy of Ekiti Artisan Connect (EAC)",
+  "description": "A hyper-local digital marketplace bridging the gap between skilled artisans and service seekers in Ekiti State, featuring AI-assisted job matching and identity verification.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
