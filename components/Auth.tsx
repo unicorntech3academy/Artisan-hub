@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { UserRole, User, Profile } from '../types';
+// Added EkitiLGA to imports
+import { UserRole, User, Profile, EkitiLGA } from '../types';
 import { Mail, Lock, User as UserIcon, Phone, MapPin, Briefcase, ChevronRight, Loader2 } from 'lucide-react';
 import { EKITI_LGAS, JOB_CATEGORIES } from '../constants';
 
@@ -195,7 +196,8 @@ export const Auth: React.FC = () => {
                     <select 
                       className="w-full pl-10 pr-4 py-2 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-emerald-500 outline-none transition-all appearance-none"
                       value={formData.lga}
-                      onChange={e => setFormData({...formData, lga: e.target.value})}
+                      // Fixed: Cast e.target.value to EkitiLGA
+                      onChange={e => setFormData({...formData, lga: e.target.value as EkitiLGA})}
                     >
                       {EKITI_LGAS.map(lga => <option key={lga} value={lga}>{lga}</option>)}
                     </select>

@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { X, Sparkles, MapPin, Tag, Banknote, Loader2 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { EKITI_LGAS, JOB_CATEGORIES } from '../constants';
-import { JobStatus, UserRole } from '../types';
+// Added EkitiLGA to imports
+import { JobStatus, UserRole, EkitiLGA } from '../types';
 import { enhanceJobDescription } from '../services/geminiService';
 
 export const JobPostModal: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ isOpen, onClose }) => {
@@ -96,7 +97,8 @@ export const JobPostModal: React.FC<{ isOpen: boolean; onClose: () => void }> = 
               <select 
                 className="w-full px-4 py-2 rounded-xl border border-gray-200"
                 value={form.lga}
-                onChange={e => setForm({...form, lga: e.target.value})}
+                // Fixed: Cast e.target.value to EkitiLGA
+                onChange={e => setForm({...form, lga: e.target.value as EkitiLGA})}
               >
                 {EKITI_LGAS.map(lga => <option key={lga} value={lga}>{lga}</option>)}
               </select>
