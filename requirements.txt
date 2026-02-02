@@ -1,8 +1,9 @@
-django
-djangorestframework
-django-cors-headers
-whitenoise
-gunicorn
-psycopg2-binary
-python-dotenv
-requests
+﻿asgiref==3.11.0
+Django==6.0.1
+django-cors-headers==4.9.0
+djangorestframework==3.16.1
+git-filter-repo==2.47.0
+pillow==12.1.0
+sqlparse==0.5.5
+tzdata==2025.3
+whitenoise==6.11.0
